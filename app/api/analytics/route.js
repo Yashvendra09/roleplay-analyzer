@@ -1,9 +1,4 @@
-// app/api/analytics/route.js
-// GET /api/analytics
-// Query params:
-//   userId (optional) - filter by user
-//   limit (optional) - number of most recent items to include in timeSeries (default 50)
-//   groupBy (optional) - 'day'|'hour' (default 'day') - controls aggregation granularity
+// app/api/analytics/route.j
 
 import { NextResponse } from 'next/server';
 import connectDB from '../../../services/db.js';
