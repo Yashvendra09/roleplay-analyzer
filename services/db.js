@@ -9,8 +9,6 @@ const MONGODB_URI = process.env.MONGODB_URI;
 if (!MONGODB_URI) {
   throw new Error('MONGODB_URI is not set. Add it to .env.local');
 }
-
-// Global cache to avoid creating multiple connections in dev / hot reload
 let cached = global._mongoose;
 
 if (!cached) {
@@ -30,7 +28,6 @@ async function connectDB() {
   if (!cached.promise) {
     cached.promise = mongoose
       .connect(MONGODB_URI, {
-        // Keep options minimal; tune for prod as needed
         maxPoolSize: 10,
       })
       .then((mongooseInstance) => mongooseInstance)
