@@ -44,7 +44,7 @@ export async function POST(req) {
 
     // 1) Call Groq via Vercel AI SDK – plain text response
     const { text } = await generateText({
-      model: groq('llama-3.1-8b-instant'), // or any Groq chat model you have access to
+      model: groq('llama-3.1-8b-instant'), 
       prompt,
     });
 
